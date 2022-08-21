@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <meta name="msapplication-config" content="assets/favicon/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  <title>Klever - Wish Wallet</title>
+</head>
+<body onload="tokensController.indexStatus()">
+  <!-- HEADER -->
+  <header>
+    <img src="assets/logo.svg" class="logo">
+    <!-- <h1>Klever</h1> -->
+  </header>
+
+  <!-- SEÇÃO PRINCIPAL -->
+  <section class="main-section">
+       
+    
+    <div class="main-menu">
+        <div class="menu-bar">
+          <img src="assets/shooting-star.svg" class="star">
+        </div>  
+        <div class="title">
+          <h1>Wish Wallet</h1> 
+        </div>
+        <a href="addToken.html">
+        <button id="back-button" type="button"  >Add Token</button>
+        </a>
+    </div>
+    
+    <br><br>
+    <ul id="currency-list"></ul>
+    <div class="div-tabela">
+      <table class="tabela">
+        <thead>
+          <th></th>
+          <th>Tokens</th>
+          <th>Balance</th>
+      </thead>
+        <tbody id="tabela-corpo"></tbody>
+      </table>
+    </div>
+
+
+
+  </section>
+  
+  <!-- SCRIPT -->
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <meta name="msapplication-config" content="assets/favicon/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  <title>Klever - addToken</title>
+</head>
+<body onload="tokensController.updateStatus()">
+  <!-- HEADER -->
+  <header>
+    <img src="assets/logo.svg" class="logo"alt="Klever">
+    <!-- <h1>Klever</h1> -->
+  </header>
+
+  <!-- SEÇÃO PRINCIPAL -->
+  <section class="main-section">
+
+    <div class="mensagens" id="mensagens" >
+      <img
+        src="assets/close.svg"
+        alt="Button to close window"
+        onclick="tokensController.fecharMensagem()"
+      />
+      <span id="textoMensagem"></span>
+    </div>
+
+
+    <div class="title">
+      <img src="assets/shooting-star.svg" class="star">
+      <h1>Wish Wallet</h1> 
+    </div>
+
+    <div class="sub-title">
+     
+      <h2>Add Token</h2> 
+      <a href="index.html">
+        <button id="back-button" type="button" class="secondary">Back</button>
+      </a>
+    </div> 
+    <div>
+      <label for="token-input">Token</label>
+      <input type="text" id="token-input" >
+    </div>
+    <br>
+    <div>
+      <label for="balance-input">Balance</label>
+      <input type="text" id="balance-input">
+    </div> 
+    
+    <div class="group-button">
+      <div></div>
+      <button id="save-button" type="button" class="" onclick="tokensController.save()">Save</button>
+    </div>
+
+  </section>
+  
+  <!-- SCRIPT -->
+  <script src="js/script.js"></script>
+</body>
+</html>
