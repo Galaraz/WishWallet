@@ -66,22 +66,19 @@ class TokensController {
 
   successmessage() {
     let message = " Token added successfully!!! ";
-     
     document.getElementById("textmessage").innerText = message
-    document.getElementById("mensagens").classList.add("show")
+    document.getElementById("message").classList.add("show")
     return true
   }
 
   cancel() {
     document.getElementById('token-input').value = ""
     document.getElementById('balance-input').value = ""
-    
     this.editionId = null
   }
 
   remove(id) {
     id = this.editionId;
-    
     let position = null
    
     if (confirm("Are you sure you want to delete this Token!")) {
@@ -165,14 +162,14 @@ class TokensController {
   edit(id) {
      
     let i = 0
-    let achou = false
+    let find = false
    
-    while (i < this.tokens.length && !achou) {
+    while (i < this.tokens.length && !find) {
         if (this.tokens[i].id == id) {
             document.getElementById('token-input').value = this.tokens[i].tokenInput
             document.getElementById('balance-input').value = this.tokens[i].balanceInput
             this.editionId = id
-            achou = true
+            find = true
         }
         i++
     }
@@ -182,12 +179,12 @@ class TokensController {
 verifyName(token) {
      
   let i = 0
-  let achou = false
+  let find = false
  
-  while (i < this.tokens.length && !achou) {
+  while (i < this.tokens.length && !find) {
       if (this.tokens[i].tokenInput == token.tokenInput) {
           
-        return achou = true
+        return find = true
       }
       i++
   }
@@ -196,13 +193,13 @@ verifyName(token) {
 
   saveEdit(token) {
     let i = 0
-    let achou = false
+    let find = false
 
-    while (i < this.tokens.length && !achou) {
+    while (i < this.tokens.length && !find) {
         if (this.tokens[i].id == this.editionId) {
             this.tokens[i].tokenInput = token.tokenInput
             this.tokens[i].balanceInput = token.balanceInput
-            achou = true
+            find = true
         }
         i++
     }
