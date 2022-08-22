@@ -14,17 +14,14 @@
   <title>Klever - Wish Wallet</title>
 </head>
 <body onload="tokensController.indexStatus()">
-  <!-- HEADER -->
+
   <header>
     <img src="assets/logo.svg" class="logo">
-    <!-- <h1>Klever</h1> -->
+
   </header>
 
-  <!-- SEÇÃO PRINCIPAL -->
   <section class="main-section">
-       
-    
-    <div class="main-menu">
+     <div class="main-menu">
         <div class="menu-bar">
           <img src="assets/shooting-star.svg" class="star">
         </div>  
@@ -32,28 +29,21 @@
           <h1>Wish Wallet</h1> 
         </div>
         <a href="addToken.html">
-        <button id="back-button" type="button"  >Add Token</button>
+        <button id="back-button" type="button">Add Token</button>
         </a>
     </div>
-    
     <br><br>
-    <ul id="currency-list"></ul>
-    <div class="div-tabela">
-      <table class="tabela">
+    <div class="div-table">
+      <table class="table">
         <thead>
           <th></th>
           <th>Tokens</th>
           <th>Balance</th>
       </thead>
-        <tbody id="tabela-corpo"></tbody>
+        <tbody id="table-body"></tbody>
       </table>
     </div>
-
-
-
   </section>
-  
-  <!-- SCRIPT -->
   <script src="js/script.js"></script>
 </body>
 </html>

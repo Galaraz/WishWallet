@@ -14,22 +14,21 @@
   <title>Klever - addToken</title>
 </head>
 <body onload="tokensController.updateStatus()">
-  <!-- HEADER -->
+
   <header>
     <img src="assets/logo.svg" class="logo"alt="Klever">
-    <!-- <h1>Klever</h1> -->
+
   </header>
 
-  <!-- SEÇÃO PRINCIPAL -->
   <section class="main-section">
 
-    <div class="mensagens" id="mensagens" >
+    <div class="message" id="message" >
       <img
         src="assets/close.svg"
         alt="Button to close window"
-        onclick="tokensController.fecharMensagem()"
+        onclick="tokensController.closeMessage()"
       />
-      <span id="textoMensagem"></span>
+      <span id="textmessage"></span>
     </div>
 
 
@@ -62,7 +61,7 @@
 
   </section>
   
-  <!-- SCRIPT -->
+
   <script src="js/script.js"></script>
 </body>
 </html>
