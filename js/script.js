@@ -8,7 +8,7 @@ class TokensController {
   }
 
   closeMessage() {
-    document.getElementById("mensagens").classList.remove("show");
+    document.getElementById("message").classList.remove("show");
   }
   updateStatus() {
     if (localStorage.getItem('tokens') != null) {
@@ -39,32 +39,35 @@ class TokensController {
     let token = {}
     token.tokenInput = document.getElementById('token-input').value
     token.balanceInput = document.getElementById('balance-input').value
+    token.new = 0;
     return token
   }
   validate(token) {
-    let mensagem = ""
+    let message = ""
     if (token.tokenInput == "") {
-        mensagem += "Token field is required!!!\n";
+        message += "Token field is required!!!\n";
     }
     if (token.balanceInput == "") {
-        mensagem += "Balance field is required!!!\n";
+        message += "Balance field is required!!!\n";
     }
-    if (this.verifyName(token) == true) {
-        mensagem += "token name exists!!!\n"; 
+    if (token.new == 0) {
+      if (this.verifyName(token) == true) {
+        message += "token name exists!!!\n"; 
+      }
     }
-    if (mensagem != "") {
-        document.getElementById("textoMensagem").innerText = mensagem
-        document.getElementById("mensagens").classList.add("show")
+    if (message != "") {
+        document.getElementById("textmessage").innerText = message
+        document.getElementById("message").classList.add("show")
         return false
     }
-
+    
     return true
   }
 
-  successMessage() {
-    let mensagem = " Token adicionado com sucesso ";
+  successmessage() {
+    let message = " Token added successfully!!! ";
      
-    document.getElementById("textoMensagem").innerText = mensagem
+    document.getElementById("textmessage").innerText = message
     document.getElementById("mensagens").classList.add("show")
     return true
   }
@@ -79,18 +82,18 @@ class TokensController {
   remove(id) {
     id = this.editionId;
     
-    let posicao = null
+    let position = null
    
-    if (confirm("Tem certeza que deseja deletar esse Token!")) {
+    if (confirm("Are you sure you want to delete this Token!")) {
 
       for (let i = 0; i < this.tokens.length; i++) {
           if (this.tokens[i].id == id) {
-              posicao = i
+              position = i
           }
       }
        
-      if (posicao != null) {
-        this.tokens.splice(posicao, 1);
+      if (position != null) {
+        this.tokens.splice(position, 1);
         this.editionId = null;
         this.synchronizeLocalStorage();
 
@@ -110,30 +113,32 @@ class TokensController {
         let columnEdit    = line.insertCell()
         let columnToken   = line.insertCell()
         let columnBalance = line.insertCell()
-        
-        
         let imgEditar = document.createElement('img')
         imgEditar.src = "assets/edit.svg"
         imgEditar.setAttribute('onclick', `tokensController.pageEdit('${this.tokens[i].id}')`)
         columnEdit.appendChild(imgEditar)
         columnToken.innerText = this.tokens[i].tokenInput
         columnBalance.innerText = this.tokens[i].balanceInput
-  
     }
   }
 
   save() {
     let token = this.readData()
+    if (this.editionId != null) {
+    token.new = 1;
+    }  
     if (this.validate(token)) {
         if (this.editionId == null) {
             this.add(token)
-            this.successMessage()    
+            this.successmessage()    
         } else {
+            
             this.saveEdit(token)
             this.cancel()
             this.synchronizeLocalStorage()
             window.location.href="index.html";
         }
+        token.new = 0;
         this.cancel()
         this.synchronizeLocalStorage()
         this.createTable()

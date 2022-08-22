@@ -78,7 +78,7 @@ button:hover {
 }
 
 button.alert {
-  background-color: var(--font-alert);
+  background-color: var(--button-alert);
 }
 
 button.secondary {
