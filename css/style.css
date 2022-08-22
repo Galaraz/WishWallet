@@ -6,7 +6,9 @@
   --bg-color: #13152A;
   --font-primary: #222;
   --font-secondary: #aaa;
-  --font-alert: #920000;
+  --button-alert: #920000;
+  --message-alert : rgb(199, 80, 80);
+  --message-sucess : rgb(199, 80, 80);
 }
 
 * {
@@ -147,21 +149,22 @@ ul li:nth-child(odd) {
   margin-top: 30px;
 }
 
-.mensagens {
+.message {
   display: none;
   background-color: rgb(199, 80, 80);
-  color: white;
+  color: var(--secondary);
   padding: 20px;
   opacity: 0.9;
   position: absolute;
-  width: 60%;
-  animation: slide-mensagem 1s;
+  max-width: 450px;
+  width: 100%;
+  animation: slide-message 1s;
 }
 
-.mensagens.show {
+.message.show {
   display: block;
 }
-.mensagens img {
+.message img {
   cursor: pointer;
   width: 10px;
   float: right;
@@ -173,13 +176,13 @@ ul li:nth-child(odd) {
   justify-content: space-between;
 }
 
-.div-tabela {
+.div-table {
   padding: -1px 40px;
   float: left;
   width: 100%;
 }
 
-.tabela {
+.table {
   width: 100%;
   border-collapse: collapse;
 }
@@ -200,7 +203,7 @@ th {
   
   font-weight: 300;
 }
-@keyframes slide-mensagem {
+@keyframes slide-message {
   from {
       transform: translate3d(0px, -50px, 0px);
       opacity: 0;

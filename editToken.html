@@ -23,11 +23,11 @@
   <!-- SEÇÃO PRINCIPAL -->
   <section class="main-section">
 
-    <div class="mensagens" id="mensagens">
+    <div class="message" id="mensagens">
       <img
         src="assets/close.svg"
         alt="Button to close window"
-        onclick="tokensController.fecharMensagem()"
+        onclick="tokensController.closeMessage()"
       />
       <span id="textoMensagem"></span>
     </div>
@@ -61,18 +61,6 @@
     </div>
 
   </section>
-  
-  <!-- SCRIPT -->
   <script src="js/script.js"></script>
 </body>
 </html>
-<!-- <script>
-
-if (this.editionId != null) {
-  console.log("tem id para editar")
- }
-else {
-  console.log("Nao tem id para editar")
-}
-
-</script> -->

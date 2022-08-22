@@ -7,7 +7,7 @@ class TokensController {
     
   }
 
-  fecharMensagem() {
+  closeMessage() {
     document.getElementById("mensagens").classList.remove("show");
   }
   updateStatus() {
@@ -103,20 +103,19 @@ class TokensController {
 
 
   createTable() {
-    let tabela = document.getElementById('tabela-corpo')
-    tabela.innerHTML = "";
+    let table = document.getElementById('table-body')
+    table.innerHTML = "";
     for (let i = 0; i < this.tokens.length; i++) {
-        let linha         = tabela.insertRow()
-        let columnEdit    = linha.insertCell()
-        let columnToken   = linha.insertCell()
-        let columnBalance = linha.insertCell()
+        let line         = table.insertRow()
+        let columnEdit    = line.insertCell()
+        let columnToken   = line.insertCell()
+        let columnBalance = line.insertCell()
         
         
         let imgEditar = document.createElement('img')
-        imgEditar.src = "assets/editar.svg"
+        imgEditar.src = "assets/edit.svg"
         imgEditar.setAttribute('onclick', `tokensController.pageEdit('${this.tokens[i].id}')`)
         columnEdit.appendChild(imgEditar)
-
         columnToken.innerText = this.tokens[i].tokenInput
         columnBalance.innerText = this.tokens[i].balanceInput
   
