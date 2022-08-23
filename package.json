@@ -1,0 +1,22 @@
+{
+  "name": "wishwallet",
+  "version": "1.0.0",
+  "description": "1) Home",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Galaraz/WishWallet.git"
+  },
+  "author": "Joao victor R.M",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Galaraz/WishWallet/issues"
+  },
+  "homepage": "https://github.com/Galaraz/WishWallet#readme",
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
+}
