@@ -143,6 +143,7 @@ ul li:nth-child(odd) {
 .sub-title{
   display: flex;
   justify-content:space-between;
+  color: var(--secondary);
 }
 .group-button{
   display: flex;
