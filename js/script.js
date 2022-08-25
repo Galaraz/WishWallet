@@ -1,4 +1,4 @@
-class TokensController {
+ class TokensController {
 
   constructor() {
     this.generatorId = 0
@@ -44,6 +44,7 @@ class TokensController {
   }
   validate(token) {
     let message = ""
+    // this.formatTokeninput(token.tokenInput);
     if (token.tokenInput == "") {
         message += "Token field is required!!!\n";
     }
@@ -76,6 +77,10 @@ class TokensController {
     document.getElementById('balance-input').value = ""
     this.editionId = null
   }
+exit(){
+  return window.location.href="index.html";
+}
+
 
   remove(id) {
     id = this.editionId;
@@ -127,18 +132,21 @@ class TokensController {
     if (this.validate(token)) {
         if (this.editionId == null) {
             this.add(token)
-            this.successmessage()    
+            this.successmessage() 
         } else {
             
             this.saveEdit(token)
             this.cancel()
             this.synchronizeLocalStorage()
-            window.location.href="index.html";
+            this.exit()
+            
         }
         token.new = 0;
         this.cancel()
         this.synchronizeLocalStorage()
-        this.createTable()
+        
+        return this.exit();
+       
     }
   }
   add(token) {
@@ -205,6 +213,13 @@ verifyName(token) {
     }
 }
 
+formatTokeninput(token){
+  var element = token.tokenInput;
+  var value   = element.trim();
+  if(value == 'NaN') element.value = '';
+  token.tokenInput = element.value;
+  return token.tokenInput;
+}
 
   formatCurrency() {
     var element = document.getElementById('balance-input');

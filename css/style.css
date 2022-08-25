@@ -8,7 +8,7 @@
   --font-secondary: #aaa;
   --button-alert: #920000;
   --message-alert : rgb(199, 80, 80);
-  --message-sucess : rgb(199, 80, 80);
+
 }
 
 * {
@@ -152,14 +152,22 @@ ul li:nth-child(odd) {
 
 .message {
   display: none;
-  background-color: rgb(199, 80, 80);
   color: var(--secondary);
+  background-color: var(--message-alert);
   padding: 20px;
   opacity: 0.9;
   position: absolute;
   max-width: 450px;
   width: 100%;
   animation: slide-message 1s;
+}
+
+.sucess {
+  background-color: var(--message-sucess);
+}
+
+.alert {
+  background-color: var(--message-alert);
 }
 
 .message.show {
@@ -214,4 +222,5 @@ th {
       transform: translate3d(0px, 0px, 0px);
       opacity: 0.9;
   }
+
 }
