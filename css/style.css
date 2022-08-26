@@ -39,8 +39,12 @@ h1 {
   font-size: 30px;
   margin: 1rem 0;
 }
+h2 {
+  font-size: 24px;
+  margin: 1rem 0;
+}
 label {
-  color: var(--font-secondary);
+  color: var(--secondary);
 }
 input[type="text"] {
   padding: 0.5rem;
@@ -143,6 +147,7 @@ ul li:nth-child(odd) {
 .sub-title{
   display: flex;
   justify-content:space-between;
+  color: var(--secondary);
 }
 .group-button{
   display: flex;

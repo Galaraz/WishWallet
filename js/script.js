@@ -66,10 +66,7 @@
   }
 
   successmessage() {
-    let message = " Token added successfully!!! ";
-    document.getElementById("textmessage").innerText = message
-    document.getElementById("message").classList.add("show")
-    return true
+    alert("Token added successfully!!!");
   }
 
   cancel() {
