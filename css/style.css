@@ -229,3 +229,20 @@ th {
   }
 
 }
+
+@media (max-width: 768px) { 
+  section {
+    max-width: 350px;
+    width: 100%;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  button  {
+    padding: 0.6rem 1em;
+    width: 108px;
+  }
+  .message {
+    max-width: 350px;
+  }
+}
