@@ -242,4 +242,7 @@ th {
     padding: 0.6rem 1em;
     width: 108px;
   }
+  .message {
+    max-width: 350px;
+  }
 }
